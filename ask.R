@@ -1,3 +1,10 @@
+# ------------------------------------------------------------------------------
+# Asking the user for some information.
+# ------------------------------------------------------------------------------
+# 22 September 2019
+# Pete Arnold
+# ------------------------------------------------------------------------------
+
 # Function: Get an integer from the user.
 # Ask the user to enter a number, check it. If not an integer, report this and
 # try again.
