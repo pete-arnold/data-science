@@ -21,7 +21,7 @@ for(f in pi^(0:3))
             drawlabels = FALSE, axes = FALSE, frame = TRUE)
 
 # Try a random variable and solve it to see what we get.
-par(mfrow=c(1, 1), mar=rep(1, 4))
+par(mfrow=c(1, 2), mar=rep(1, 4))
 s <- matrix(rbinom(27 * 27, size=10, prob=0.5), nrow=27, ncol=27)
 t <- solve(s)
 filled.contour(t, #axes = FALSE,
