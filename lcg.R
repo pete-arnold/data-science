@@ -28,23 +28,31 @@ lcg_vector <- function(modulus, a, c, seed, n=1) {
 n <- 10000
 
 # Bad parameters.
-m <- 23
-a <- 6
+m <- 25
+a <- 5
 s <- runif(1) * 100
-c <- 7
+c <- 5
 bad <- lcg_vector(m, a, c, s, n)
 # Good parameters.
-m <- 86436
-a <- 1093
+m <- 90000
+a <- 1000
 s <- runif(1) * 100
-c <- 18257
+c <- 20000
 good <- lcg_vector(m, a, c, s, n)
 
 # Plot the results.
+<<<<<<< HEAD
 par(mfrow=c(2,2))
 hist(bad, breaks=100)
 plot(bad[1:length(bad)-1], bad[2:length(bad)], pch='.', cex=1, col='red')
 hist(good, breaks=100)
 plot(good[1:length(good)-1], good[2:length(good)], pch='.', cex=1, col='green')
-
+#time to change
 #data science data science
+=======
+par(mfrow = c(2, 2))
+hist(bad, breaks = 100)
+plot(bad[1:length(bad)-1], bad[2:length(bad)], pch = '.', cex = 1, col = 'red')
+hist(good, breaks = 100)
+plot(good[1:length(good)-1], good[2:length(good)], pch = '.', cex = 1, col = 'green')
+>>>>>>> 266b8af1986c23d564a58199525acd8f4091ad68
