@@ -46,3 +46,5 @@ hist(bad, breaks=100)
 plot(bad[1:length(bad)-1], bad[2:length(bad)], pch='.', cex=1, col='red')
 hist(good, breaks=100)
 plot(good[1:length(good)-1], good[2:length(good)], pch='.', cex=1, col='green')
+
+#data science data science
