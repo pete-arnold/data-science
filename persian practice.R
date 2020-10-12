@@ -27,4 +27,4 @@ t <- solve(s)
 filled.contour(t, #axes = FALSE,
                color.palette = terrain.colors,
                frame.plot = FALSE, plot.axes = {})
-#new pull tactic
+
