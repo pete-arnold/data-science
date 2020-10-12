@@ -11,7 +11,7 @@ lcg <- function(modulus, a, c, seed) {
 }
 
 # Vector generator.
-lcg_vector <- function(modulus, a, c, seed, n) {
+lcg_vector <- function(modulus, a, c, seed, n=1) {
     l <- vector()
     for (i in 1:n) {
         s <- lcg(modulus, a, c, s)
