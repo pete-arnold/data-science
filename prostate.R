@@ -13,7 +13,7 @@
 # pgg45 - percentage Gleason scores 4 or 5 
 # lpsa - log(prostate specific antigen)
 #
-install.packages('faraway')
+#install.packages('faraway')
 
 library(faraway)
 attach(prostate)
