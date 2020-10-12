@@ -9,7 +9,7 @@
 lcg <- function(modulus, a, c, seed) {
     return((a * (seed + c)) %% modulus)
 }
-
+#just relax it will all make sense
 # Vector generator.
 lcg_vector <- function(modulus, a, c, seed, n=1) {
     l <- vector()
