@@ -6,7 +6,7 @@
 # also have kronecker
 # ------------------------------------------------------------------------------
 # Create vectors to provide the values for x and y calculations.
-x <- y <- seq(-4*pi, 4*pi, len = 27)
+x <- y <- seq(-4*pi, 4*pi, len = 30)
 # Calculate a function using the outer product of x and y and the function '+'.
 r <- sqrt(outer(x^2, y^2, "+"))
 # Visualise the values as a filled contour plot.
