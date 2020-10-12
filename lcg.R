@@ -41,7 +41,6 @@ c <- 20000
 good <- lcg_vector(m, a, c, s, n)
 
 # Plot the results.
-<<<<<<< HEAD
 par(mfrow=c(2,2))
 hist(bad, breaks=100)
 plot(bad[1:length(bad)-1], bad[2:length(bad)], pch='.', cex=1, col='red')
@@ -49,10 +48,4 @@ hist(good, breaks=100)
 plot(good[1:length(good)-1], good[2:length(good)], pch='.', cex=1, col='green')
 #time to change
 #data science data science
-=======
-par(mfrow = c(2, 2))
-hist(bad, breaks = 100)
-plot(bad[1:length(bad)-1], bad[2:length(bad)], pch = '.', cex = 1, col = 'red')
-hist(good, breaks = 100)
-plot(good[1:length(good)-1], good[2:length(good)], pch = '.', cex = 1, col = 'green')
->>>>>>> 266b8af1986c23d564a58199525acd8f4091ad68
+
