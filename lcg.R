@@ -11,7 +11,7 @@ lcg <- function(modulus, a, c, seed) {
 }
 
 # Vector generator.
-lcg_vector <- function(modulus, a, c, seed, n) {
+lcg_vector <- function(modulus, a, c, seed, n = 1) {
     l <- vector()
     for (i in 1:n) {
         s <- lcg(modulus, a, c, s)
@@ -28,21 +28,21 @@ lcg_vector <- function(modulus, a, c, seed, n) {
 n <- 10000
 
 # Bad parameters.
-m <- 23
-a <- 6
+m <- 25
+a <- 5
 s <- runif(1) * 100
-c <- 7
+c <- 5
 bad <- lcg_vector(m, a, c, s, n)
 # Good parameters.
-m <- 86436
-a <- 1093
+m <- 90000
+a <- 1000
 s <- runif(1) * 100
-c <- 18257
+c <- 20000
 good <- lcg_vector(m, a, c, s, n)
 
 # Plot the results.
-par(mfrow=c(2,2))
-hist(bad, breaks=100)
-plot(bad[1:length(bad)-1], bad[2:length(bad)], pch='.', cex=1, col='red')
-hist(good, breaks=100)
-plot(good[1:length(good)-1], good[2:length(good)], pch='.', cex=1, col='green')
+par(mfrow = c(2, 2))
+hist(bad, breaks = 100)
+plot(bad[1:length(bad)-1], bad[2:length(bad)], pch = '.', cex = 1, col = 'red')
+hist(good, breaks = 100)
+plot(good[1:length(good)-1], good[2:length(good)], pch = '.', cex = 1, col = 'green')
