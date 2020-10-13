@@ -28,10 +28,10 @@ lcg_vector <- function(modulus, a, c, seed, n=1) {
 n <- 10000
 
 # Bad parameters.
-m <- 25
-a <- 5
+m <- 2500
+a <- 50000
 s <- runif(1) * 100
-c <- 5
+c <- 5000
 bad <- lcg_vector(m, a, c, s, n)
 # Good parameters.
 m <- 90000
