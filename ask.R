@@ -12,7 +12,7 @@
 get_number <- function() { 
     n <- readline(prompt="Enter an integer: ")
     if(!grepl("^[0-9]+$", n)) {
-        cat(n, "is not an integer.\n", sep=" ")
+        cat(n, "is not an integer!!!!!!!!!!!\n", sep=" ")
         return(get_number())
     }
     return(as.integer(n))
