@@ -1,0 +1,126 @@
+PMIM102 – Introduction to Scientific Computing in Healthcare
+============================================================
+
+Lab Exercises: Day 3
+
+Marcos del Pozo Banos, 2017
+
+
+Exercise 1 – Flow chart
+-----------------------
+
+Design a program to control a fridge with a thermostat reading the temperature continuously and a cooling compressor that you can turn on and off
+
+Exercise 2 – Flow chart and modular programming
+-----------------------------------------------
+
+Design an autopilot to keep a car between the lane lines in a motorway. The car has a steering wheel and two sensors (left and right) reading the distance to the lane lines. Use modules to simplify the problem.
+
+Exercise 3 – Functions
+----------------------
+
+Write a function on R that computes the area of any rectangle.
+
++ Input arguments: side1, side2
+
++ Returns: area of the rectangle with dimensions side1 x side2.
+
+Exercise 4 – Error solving
+--------------------------
+
+The following code has multiple errors that you need to solve. You have to check for
+syntax errors (e.g. missing parentheses), name errors (e.g. typos in names of variables
+or even missing or undefined variables), functional errors (e.g. errors in equations),
+or bad practice errors (e.g. errors in the code documentation, or complex, non-intuitive 
+names).
+
+Copy the following code (2 functions: say_my_name and order_name) into an R script,
+save the script (name it whatever you prefer) and correct all errors:
+
+# Prints a hello message.
+#
+# Input arguments:
+#    name: (str) Name to print
+#
+say_my_name <- function(name)
+
+    print(paste('Hello', name))
+
+}
+
+# Returns the total price of a client's order
+#
+# Input arguments:
+#    client: (str) Name of the client
+#    num_carrots: (int) Number of carrots
+#    num_potatoes: (int) Number of carrots
+#    num_sweets: (int) Number of carrots
+#    discount: (num) Discount percentage. Must be between 0 and 100.
+#
+# Returns: A personalized message with the total price of a client's order
+#
+order_name <- function(client, num_carrots, num_potatoes, num_sweets, discount) {
+
+    # Price in pounds per unit   
+    price_carrots = 1
+    price_potatoes = 0.65
+    
+    # Calculate the final price
+    final_price = 1 - discount/100*(price_carrots*num_carrots + price_potatoes*num_potatoes + price_sweets*num_sweets)
+    
+    say_my_name(client)
+    print(paste('Your order price is £', final_price, sep=''))
+    
+}
+
+
+Run the following in R's console:
+
+>>> order_name(“Tony Stark”, 5, 10, 1, 101)
+
+
+Exercise 5 – Functions
+
+Write a function in R that receives a list of integers and an integer value, and returns the number of elements in the list with that value.
+
+# Count of events in a list
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#    v: (int) Value to count in l
+#
+# Returns: (int) Count of v events in l
+#
+count_event <- function(l, v){
+    …
+}
+
+Exercise 6 – Functions
+
+Write a function in R that receives a list of integers and returns the list of unique values.
+
+# Finds the list of unique events
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#
+# Returns: (list of int) List of unique values
+#
+unique_events <- function(l, v){
+    …
+}
+
+Exercise 7 – Functions
+
+Write a function in R that receives a list of integers and an integer value, and returns the number of elements in the list with that value.
+
+# Finds unique events in a list and counts their occurrence. 
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#
+# Returns: (data.frame) A data.frame with columns “event” and “count”.
+#
+count_all_element <- function(l, v){
+    …
+}
