@@ -3,20 +3,23 @@
 # ------------------------------------------------------------------------------
 # 22 September 2019
 # Pete Arnold
+#c
 # ------------------------------------------------------------------------------
 
 # Function: Get an integer from the user.
 # Ask the user to enter a number, check it. If not an integer, report this and
 # try again.
 # @return The integer
-get_number <- function() { 
-    n <- readline(prompt="Enter an integer: ")
-    if(!grepl("^[0-9]+$", n)) {
-        cat(n, "is not an integer.\n", sep=" ")
-        return(get_number())
-    }
-    return(as.integer(n))
+##get_number <- function() { 
+n <- readline(prompt="Enter an integer: ")
+if(!grepl("^[0-9]+$", n)) {
+    cat(n, "is not an integer.\n", sep=" ")
+    ##return(get_number())
+} else {
+    n <- as.integer(n)
 }
+    ##return(as.integer(n))
+##}
 
 # Main program: Choose a random number and get the user to guess until they get
 #               it right.

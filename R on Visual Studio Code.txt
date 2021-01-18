@@ -1,0 +1,93 @@
+Installing R on Visual Studio code (PMIM502)
+
+1) Install R
+
+https://cran.r-project.org/bin/linux/
+https://cran.r-project.org/bin/macosx/
+https://cran.r-project.org/bin/windows/
+
+
+2)Install Python
+
+https://www.python.org/downloads/
+
+3) Install radian (in visual code terminal from this point onwards)
+
+# install released version
+pip install -U radian
+# to run radian
+radian
+
+
+4) Enable Bracketpaste in Visual studio code (search r.bracketedPaste in visual code settings)
+To make VSCode better work with radian, we should turn on r.bracketedPaste setting in VSCode.
+
+
+5) Install VSCode Extensions
+
+https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r
+https://marketplace.visualstudio.com/items?itemName=REditorSupport.r-lsp
+
+
+6) Install Language Servers
+
+https://github.com/r-windows/docs
+
+install.packages("languageserversetup")
+
+languageserversetup::languageserver_add_to_rprofile()
+might need to change backslashes to double backslashes in Rprofile (in documents folder)
+
+languageserversetup::languageserver_install()
+
+
+
+7) Install PMIM502 packages
+
+install.packages("gapminder")
+library(gapminder)
+
+install.packages("dplyr")
+library(dplyr)
+
+install.packages("ggplot2")
+library(ggplot2)
+
+install.packages("Cairo")
+library(Cairo)
+
+install.packages("plotly")
+library(plotly)
+
+install.packages("scales")
+library(scales)
+
+install.packages("extrafont")
+library(extrafont)
+
+install.packages("ggthemes")
+
+## dont know if you need this one
+install.packages("tidyverse")
+
+
+8) Open the gapminder.R file (From canvas Taught Week)
+
+9) GitHub for visual studio code
+https://code.visualstudio.com/docs/editor/github
+
+10) PostGREs
+https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+10a) If pgadmin sticks on loading:
+Do the following steps to resolve this:
+
+Open your registry editor.
+Change the value of HKEY_CLASSES_ROOT\.js\Content Type from text/plain to text/javascript.
+Restart the pgadmin server. You can do this by ending the pgadmin background task from the task manager.
+
+Tip:
+Preview data frame
+highlight dataframe and press F1
+type R: Preview Dataframe

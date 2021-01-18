@@ -1,0 +1,243 @@
+PMIM102 – Introduction to Scientific Computing in Healthcare
+============================================================
+
+Solutions to Lab Exercises: Day 3
+
+Marcos del Pozo Banos, 2017
+
+
+Exercise 1 – Flow chart
+-----------------------
+
+Design a program to control a fridge with a thermostat reading the temperature continuously and a cooling compressor that you can turn on and off
+
+					  ---------------
+		------------------------->|t = read temp|<----------------------
+		|			  ---------------   			|
+		|				|				|
+		|				V				|
+	-------------------------         --------------           -------------------------
+	| cooling compressor ON |<--------| if t > 5*C |---------->| cooling compressor OFF|
+	-------------------------   Yes   --------------    No     -------------------------
+	
+	
+
+
+Exercise 2 – Flow chart and modular programming
+-----------------------------------------------
+
+Design an autopilot to keep a car between the lane lines in a motorway. The car has a steering wheel and two sensors (left and right) reading the distance to the lane lines. Use modules to simplify the problem.
+
+
+	--------------	
+	| READ_DRIFT |<--
+	--------------	|
+	      |		|
+	      V		|
+	--------------	|
+	| TURN_WHEEL |---
+	--------------
+
+
+	Module READ_DRIFT: 
+		Inputs: None needed (reads from sensors)
+		Output: +1 if car drifs to the right
+			 0 if car in the middle
+			-1 if car drifts to the left
+	-----------------------------------------
+	|					|
+	|	-------------------------	|
+	|	| l = read left sensor  |	|
+	|	| r = read right sensor |	|
+	|	-------------------------	|
+	|		   |			|
+	|		   V			|
+	|	-----------------------		|
+	|	| drift = sign(l - r) |		|
+	|	-----------------------		|
+	|		   |			|
+	|		   V			|
+	-----------------------------------------
+
+	Module TURN_WHEEL:
+		Inputs: Car's drift sign
+		Output: None (action on wheel)
+	-------------------------------------------------------------------------
+	|		   		   |					|
+	|		   		   V					|
+	|	-------------  Yes  --------------				|
+	|	| turn left |<------| drift > 0? |				|
+	|	-------------       --------------				|
+	|		   		   |					|
+	|		   		   V					|
+	|			    --------------  Yes  --------------		|
+	|			    | drift < 0? |-------| turn right |		|
+	|			    --------------	 --------------		|
+	|		   		   |					|
+	|		   		   V					|
+	|			    ----------------  Yes  --------------	|
+	|			    | centre wheel |-------| turn right |	|
+	|			    ----------------	   --------------	|
+	|									|
+	-------------------------------------------------------------------------
+	
+
+
+
+Exercise 3 – Functions
+----------------------
+
+Write a function on R that computes the area of any rectangle.
+
++ Input arguments: side1, side2
+
++ Returns: area of the rectangle with dimensions side1 x side2.
+
+
+# Computes area of rectagle.
+#
+# Input arguments:
+#    side1: (float) length of side 1.
+#    side2: (float) length of side 2.
+#
+# Returns: Area of rectagle = side1*side2
+#
+area_of_rectagle <- function(side1, side2) {
+    return(side1*side2)
+}
+
+
+
+
+Exercise 4 – Error solving
+--------------------------
+
+NOTE: Lines with errors are flagged by ??? (beginning of line), 
+their corrected version with !!! (beginning of line),
+and a comment with  ?!- (begining of line). For example:
+
+??? There's an errrrrror here
+!!! There's an error here
+?!-Too many "r"s
+
+
+    # Prints a hello message.
+    #
+    # Input arguments:
+    #    name: (str) Name to print
+    #
+??? say_my_name <- function(name)
+!!! say_my_name <- function(name){
+?!-Missing "{" after function declaration
+
+        print(paste('Hello', name))
+
+    }
+
+    # Returns the total price of a client's order
+    #
+    # Input arguments:
+    #    client: (str) Name of the client
+    #    num_carrots: (int) Number of carrots
+??? #    num_potatoes: (int) Number of carrots
+??? #    num_sweets: (int) Number of carrots
+!!! #    num_potatoes: (int) Number of potatoes
+!!! #    num_sweets: (int) Number of sweets
+?!-Careful with copy & paste    
+    #    discount: (num) Discount percentage. Must be between 0 and 100.
+    #
+    # Returns: A personalized message with the total price of a client's order
+    #
+??? order_name <- function(client, num_carrots, num_potatoes, num_sweets, discount) {
+!!! order_price <- function(client, num_carrots, num_potatoes, num_sweets, discount) {
+?!-Non-intuitive function name.
+
+!!!     if (discount>100 | discount<0) {
+!!!	    print("Discount must be between 0 and 100")
+!!! 	    return(-1)
+!!!	}
+?!-[Optional] It is good practice to check that input arguments are what you expect.
+
+        # Price in pounds per unit   
+        price_carrots = 1
+        price_potatoes = 0.65
+!!!     price_sweets = 0.25
+?!-Added the missing variable "price_sweets"
+    
+        # Calculate the final price
+???     final_price = 1 - discount/100*(price_carrots*num_carrots + price_potatoes*num_potatoes + price_sweets*num_sweets)
+!!!     final_price = (1 - discount/100)*(price_carrots*num_carrots + price_potatoes*num_potatoes + price_sweets*num_sweets)
+?!-Missing () in equation
+    
+        say_my_name(client)
+        print(paste('Your order price is £', final_price, sep=''))
+    
+    }
+
+
+
+
+Exercise 5 – Functions
+
+Write a function in R that receives a list of integers and an integer value, and returns the number of elements in the list with that value.
+
+# Count of events in a list
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#    v: (int) Value to count in l
+#
+# Returns: (int) Count of v events in l
+#
+count_event <- function(l, v){
+    return(sum(l==v))
+}
+
+
+
+
+
+Exercise 6 – Functions
+
+Write a function in R that receives a list of integers and returns the list of unique values.
+
+# Finds the list of unique events
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#
+# Returns: (list of int) List of unique values
+#
+unique_events <- function(l){
+    return(unique(l))
+}
+
+
+
+
+
+Exercise 7 – Functions
+
+Write a function in R that receives a list of integers and an integer value, and returns the number of elements in the list with that value.
+
+# Finds unique events in a list and counts their occurrence. 
+#
+# Input arguments:
+#    l: (list of int) List of integers
+#
+# Returns: (data.frame) A data.frame with columns “event” and “count”.
+#
+count_all_element <- function(l){
+    # Find the list of unique events
+    u = unique_events(l)
+    # Initialize the data.frame using the unique values and setting count to 0.
+    res = data.frame(value = u, count = rep(0, length(u)))
+    # Go through each unique value and count how many times it appears in the list
+    for (v in 1:nrow(res)){
+        res[v, 2] = sum(l == res[v, 1])
+    }
+    # Return the result
+    reutnr(res)
+}
+print(res) 
+}
