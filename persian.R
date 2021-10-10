@@ -1,7 +1,6 @@
 # ------------------------------------------------------------------------------
 # Matrices and contours
 # Persian Rug Art
-# Pete's Changes
 # ------------------------------------------------------------------------------
 # outer is also possible as %o% compared to inner product %*%.
 # also have kronecker
