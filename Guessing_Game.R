@@ -9,11 +9,11 @@
 print("Hello, world!")
 
 # Step 1. Think of a number.
-# Generate a random number between 1 and 100 (inclusive). There are other 
+# Generate a random number between 1 and 100 (inclusive). There are other
 # solutions, for example, n <- as.integer(runif(1) * 100).
-# This is a function call that gets 1 number in the range 1 to 100 from a 
+# This is a function call that gets 1 number in the range 1 to 100 from a
 # uniform distribution (we'll cover that later).
-number <- runif(1, 1, 100)
+number <- runif(n=1, min=1, max=100)
 # But we should only allow whole numbers as decimals would be hard to guess
 # exactly, so we round 'number' to zero decimal place and save the value back to
 # 'number'.
@@ -93,7 +93,7 @@ if (have_guessed == TRUE){
     print("You guessed correctly!")
 } else {
     print("You guessed wrong!")
-}  
+}
 
 # ------------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@ while(have_guessed == FALSE){
         print("You guessed correctly!")
     } else {
         print("You guessed wrong!")
-    } 
+    }
 }
 
 # This is the repeat-loop code.
@@ -173,7 +173,7 @@ repeat{
         break
     } else {
         print("You guessed wrong!")
-    } 
+    }
 }
 
 # ------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ repeat{
         break
     } else {
         cat("You guessed wrong, it wasn't", guess, "!\n")
-    } 
+    }
 }
 
 # 7.2 Improve the error handling.
@@ -220,7 +220,7 @@ repeat{
         break
     } else {
         cat("You guessed wrong, it wasn't", guess, "!\n")
-    } 
+    }
 }
 
 # 7.3 An explicit way out.
@@ -245,7 +245,7 @@ repeat{
         break
     } else {
         cat("You guessed wrong, it wasn't", guess, "!\n")
-    } 
+    }
 }
 
 # 7.4 With clues.
@@ -274,7 +274,7 @@ repeat{
         } else {
             cat("You guessed too low, it wasn't", guess, "!\n")
         }
-    } 
+    }
 }
 
 # 7.5 Save the guesses.
@@ -305,7 +305,7 @@ repeat{
         } else {
             cat("You guessed too low, it wasn't", guess, "!\n")
         }
-    } 
+    }
 }
 print("You guessed the following values:")
 print(guesses)
@@ -344,7 +344,7 @@ repeat{
         }
         number <- number + round(runif(1, -change, change), 0)
         numbers <- c(numbers, number)
-    } 
+    }
 }
 print("You guessed the following values:")
 print(guesses)
