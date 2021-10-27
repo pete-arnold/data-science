@@ -68,5 +68,5 @@ abline(m, col='purple')
 
 m<-lm(lcavol~exp(lpsa), data=prostate)
 plot(exp(lpsa),lcavol)
-abline(m, col='orange')
+abline(m, col='blue')
 
