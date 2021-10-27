@@ -20,7 +20,7 @@ number <- runif(n=1, min=1, max=100)
 number <- round(number, 0)
 
 # We can, in fact, do this is one step.
-number <- round(runif(1, 1, 100), 0)
+number <- round(runif(1, 1, 200), 0)
 
 # ------------------------------------------------------------------------------
 
