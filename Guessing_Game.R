@@ -13,7 +13,7 @@ print("Hello, world!")
 # solutions, for example, n <- as.integer(runif(1) * 100).
 # This is a function call that gets 1 number in the range 1 to 100 from a
 # uniform distribution (we'll cover that later).
-number <- runif(1, 1, 100)
+number <- runif(n=1, min=1, max=100)
 # But we should only allow whole numbers as decimals would be hard to guess
 # exactly, so we round 'number' to zero decimal place and save the value back to
 # 'number'.
