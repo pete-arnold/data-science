@@ -3,14 +3,14 @@
 # ------------------------------------------------------------------------------
 # Format
 # This data frame contains the following columns:
-# lcavol - log(cancer volume) 
-# lweight - log(prostate weight) 
-# age - age 
-# lbph - log(benign prostatic hyperplasia amount) 
-# svi - seminal vesicle invasion 
-# lcp - log(capsular penetration) 
-# gleason - Gleason score 
-# pgg45 - percentage Gleason scores 4 or 5 
+# lcavol - log(cancer volume)
+# lweight - log(prostate weight)
+# age - age
+# lbph - log(benign prostatic hyperplasia amount)
+# svi - seminal vesicle invasion
+# lcp - log(capsular penetration)
+# gleason - Gleason score
+# pgg45 - percentage Gleason scores 4 or 5
 # lpsa - log(prostate specific antigen)
 #
 # install.packages('faraway')
@@ -64,9 +64,9 @@ shapiro.test(lpsa)
 par(mfrow=c(1,2))
 m<-lm(lcavol~lpsa, data=prostate)
 plot(lpsa,lcavol)
-abline(m, col='red')
+abline(m, col='blue')
 
 m<-lm(lcavol~exp(lpsa), data=prostate)
 plot(exp(lpsa),lcavol)
-abline(m, col='green')
+abline(m, col='orange')
 
