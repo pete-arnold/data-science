@@ -3,6 +3,8 @@
 # ------------------------------------------------------------------------------
 # January 2020
 # Pete Arnold
+# This is an older version of this code. For the up-to-date version, please see
+# Canvas.
 # ------------------------------------------------------------------------------
 
 # 1. Generate a random number between 1 and 100 (inclusive).
@@ -33,7 +35,7 @@ if (is_guessed) {
     cat("The guess '", guess, "' was incorrect!\n")
     cat("The number was", n, ".\n")
 }
-    
+
 # 6. How to let the player guess 6 times with a for-loop.
 n <- round(runif(1) * 100, 0)
 n_guesses <- 6
@@ -79,7 +81,7 @@ for (i in 1:n_guesses){
     }
 }
 if (!is_guessed) cat("The number was", n, ".\n")
-    
+
 # 8a. Use a repeat loop so that we continue until the user guesses or inputs a
 #    non number.
 n <- round(runif(1) * 100, 0)
@@ -104,7 +106,7 @@ repeat{
         cat("The guess '", guess, "' was too low!\n")
     }
 }
-if (!is_guessed) cat("The number was", n, ".\n") 
+if (!is_guessed) cat("The number was", n, ".\n")
 
 # 8b. Use a while loop for the same result.
 n <- round(runif(1) * 100, 0)
@@ -128,7 +130,7 @@ while(is_number & !is_guessed){
         }
     }
 }
-if (!is_guessed) cat("The number was", n, ".\n")    
+if (!is_guessed) cat("The number was", n, ".\n")
 
 # 9. Remember the guesses, display how many guesses there were and the guesses.
 n <- round(runif(1) * 100, 0)
@@ -158,7 +160,7 @@ repeat{
         cat("The guess '", guess, "' was too low!\n")
     }
 }
-if (!is_guessed) cat("The number was", n, ".\n") 
+if (!is_guessed) cat("The number was", n, ".\n")
 cat("There were", length(guesses), "guesses, which were:\n")
 print(guesses)
 
@@ -192,10 +194,10 @@ repeat{
     } else {
         cat("The guess '", guess, "' was too low!\n")
     }
-    if (runif(1) < 0.5) 
+    if (runif(1) < 0.5)
     n <- n + as.integer((runif(1) - 0.5) * 2 * (d + 1))
 }
-if (!is_guessed) cat("The number was", n, ".\n") 
+if (!is_guessed) cat("The number was", n, ".\n")
 cat("There were", length(guesses), "guesses, which were:\n")
 print(guesses)
 cat("The numbers were:\n")
