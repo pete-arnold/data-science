@@ -84,7 +84,7 @@ test_bmi(100, 100, NA)
 
 # Step 4. Work out the BMI values for the Star Wars characters.
 head(starwars)
-sw <- starwars %>% 
+sw <- starwars %>%
     select(name, height, mass, gender) %>%
     mutate(BMI=bmi(mass, height))
 head(sw)
@@ -93,11 +93,12 @@ head(sw)
 
 # Step 5. Create a boxplot of BMI. Create one separating by gender.
 boxplot(sw$BMI)
-female <- sw %>% filter(gender=="masculine")
-male <- sw[sw$gender=="masculine"]
+female <- sw %>% filter(gender=="feminine")
+male <- sw[sw$gender=="masculine",]
 boxplot(sw$BMI[sw$gender=="feminine"], sw$BMI[sw$gender=="masculine"])
 boxplot(sw$BMI ~ sw$gender)
 
+boxplot(female$BMI, male$BMI)
 # Find and remove the outlier (and repeat the above lines).
 head(sw %>% filter(BMI>=100))
 sw <- sw %>% filter(BMI<100)
@@ -106,18 +107,18 @@ sw <- sw %>% filter(BMI<100)
 # What extra information have we got here?
 plot(ecdf(sw$BMI[sw$gender=="feminine"]),
     main="CDF for BMI by gender",
-    xlim=range(sw$BMI, na.rm=TRUE), 
+    xlim=range(sw$BMI, na.rm=TRUE),
     col="red")
-plot(ecdf(sw$BMI[sw$gender=="masculine"]), 
+plot(ecdf(sw$BMI[sw$gender=="masculine"]),
     col="blue",
     add=TRUE)
 # Comparing the CDF and boxplot.
 par(mfrow=c(2,1))
 plot(ecdf(sw$BMI[sw$gender=="feminine"]),
     main="CDF for BMI by gender",
-    xlim=range(sw$BMI, na.rm=TRUE), 
+    xlim=range(sw$BMI, na.rm=TRUE),
     col="red")
-plot(ecdf(sw$BMI[sw$gender=="masculine"]), 
+plot(ecdf(sw$BMI[sw$gender=="masculine"]),
     col="blue",
     add=TRUE)
 boxplot(sw$BMI ~ sw$gender, col=c("red", "blue"),horizontal=TRUE)
@@ -196,8 +197,8 @@ polygon(xpoly, ypoly, col="red")
 # Step 6. Create a demonstration dataset.
 # Step 6.1 Create the BMI data for women.
 N <- 100
-bmi_data_female <- data.frame(gender=character(N), 
-                              weight_kg=numeric(N), 
+bmi_data_female <- data.frame(gender=character(N),
+                              weight_kg=numeric(N),
                               height_cm=numeric(N))
 bmi_data_female$gender <- 'Female'
 mean_female_weight <- 69
@@ -217,8 +218,8 @@ cor.test(bmi_data_female$weight_kg, bmi_data_female$height_cm)
 boxplot(bmi_data_female$weight_kg, bmi_data_female$height_cm)
 
 # Step 6.2 Create the BMI data for men in the same way.
-bmi_data_male <- data.frame(gender=character(N), 
-                            weight_kg=numeric(N), 
+bmi_data_male <- data.frame(gender=character(N),
+                            weight_kg=numeric(N),
                             height_cm=numeric(N))
 bmi_data_male$gender <- 'Male'
 mean_male_weight <- 84
@@ -400,7 +401,7 @@ ks.test(scale(bmi_data[which(bmi_data$gender=='Female'),]$BMI),
 # Step 12. Categorical variables.
 # Create a cateory for the BMI using the standard boundaries.
 bmi_data$Height_Group <- cut(bmi_data$height_cm, c(0, 150, 170, 190, Inf),
-    right=FALSE, 
+    right=FALSE,
     labels=c("Short", "Medium", "Long", "Very long"))
 table(bmi_data$gender, bmi_data$Height_Group)
 barplot(table(bmi_data$gender, bmi_data$Height_Group), beside=TRUE)
@@ -408,7 +409,7 @@ chisq.test(bmi_data$gender, bmi_data$Height_Group)
 
 # Create a cateory for the BMI using the standard boundaries.
 bmi_data$BMI_Group <- cut(bmi_data$BMI, c(0, 18.5, 25, 30, 35, Inf),
-    right=FALSE, 
+    right=FALSE,
     labels=c("Underweight", "Healthy", "Overweight", "Obese", "Very Obese"))
 
 head(sample_n(bmi_data, 10))
@@ -422,7 +423,7 @@ barplot(table(bmi_data$gender, bmi_data$BMI_Group), beside=TRUE)
 chisq.test(bmi_data$gender, bmi_data$BMI_Group)
 
 sample$BMI_Group <- cut(sample$BMI, c(0, 18.5, 25, 30, 35, Inf),
-    right=FALSE, 
+    right=FALSE,
     labels=c("Underweight", "Healthy", "Overweight", "Obese", "Very Obese"))
 table(sample$gender, sample$BMI_Group)
 legend <- rownames(table(sample$gender, sample$BMI_Group))
@@ -430,7 +431,7 @@ barplot(table(sample$gender, sample$BMI_Group), legend.text=legend, args.legend 
 chisq.test(sample$gender, sample$BMI_Group)
 
 sw$BMI_Group <- cut(sw$BMI, c(0, 18.5, 25, 30, 35, Inf),
-    right=FALSE, 
+    right=FALSE,
     labels=c("Underweight", "Healthy", "Overweight", "Obese", "Very Obese"))
 barplot(table(sw$gender, sw$BMI_Group), legend.text=legend, args.legend = list(x = "topleft"), beside=TRUE)
 chisq.test(sw$gender, sw$BMI_Group, correct=FALSE)
