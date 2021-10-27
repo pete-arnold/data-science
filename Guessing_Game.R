@@ -348,7 +348,7 @@ repeat{
 }
 print("You guessed the following values:")
 print(guesses)
-plot(guesses, type='l', col='blue')
+plot(guesses, type='l', col='black')
 lines(numbers, col='red')
 
 # ------------------------------------------------------------------------------
