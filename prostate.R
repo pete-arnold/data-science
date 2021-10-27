@@ -64,7 +64,7 @@ shapiro.test(lpsa)
 par(mfrow=c(1,2))
 m<-lm(lcavol~lpsa, data=prostate)
 plot(lpsa,lcavol)
-abline(m, col='green')
+abline(m, col='purple')
 
 m<-lm(lcavol~exp(lpsa), data=prostate)
 plot(exp(lpsa),lcavol)
