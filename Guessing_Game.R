@@ -6,7 +6,7 @@
 # ------------------------------------------------------------------------------
 
 # Step 0. Display something so we know we are working.
-print("Hello, world!")
+print("Hello, Pete!")
 
 # Step 1. Think of a number.
 # Generate a random number between 1 and 100 (inclusive). There are other
