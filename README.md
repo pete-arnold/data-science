@@ -7,5 +7,7 @@ pushing and pulling to a github repository.
 Also included are previous sample R files and some of the module lecture notes
 about software practices and functions.
 
+Just a quick edit on the ReadMe by Alex :)
+
 
 ---
