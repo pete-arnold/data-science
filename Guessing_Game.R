@@ -11,7 +11,7 @@ n <- round(runif(1) * 100, 0)
 # How shall we check that this is correct?
 
 # 2. Get the user to make a guess.
-guess <- readline(prompt="Enter a number >>>>>>>")
+guess <- readline(prompt="Enter a number, stupid >>>>>>>")
 
 # 3. How do we check that we have a number?
 is_number <- FALSE
