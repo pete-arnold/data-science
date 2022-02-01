@@ -13,6 +13,14 @@ for (i in 1:12) {
 # or:
 seq(12, 144, 12)
 
+# 1aj. displaying 13 times table
+for (i in 1:13){
+  cat (i*13, " ")
+}
+
+## or:
+seq(13, 169, 13)
+
 # 1 (bonus) Display all the times tables from 1 to 12.
 for (i in 1:12) {
     for (j in 1:12) {
