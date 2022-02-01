@@ -12,7 +12,7 @@ n <- round(runif(1) * 100, 0)
 
 # 2. Get the user to make a guess.
 
-guess <- readline(prompt="Enter a number:KINGSLEY STUPID")
+guess <- readline(prompt="Enter a number now:KINGSLEY STUPID")
 
 guess <- readline(prompt="Enter a number >>>>>>>")
 
@@ -24,7 +24,7 @@ is_number <- !is.na(as.numeric(guess))
 #if (grepl("^[0-9]+$", guess)) is_number <- TRUE
 
 if (!is_number) {
-    message <- paste("The guess '", guess, "' was not a number!\n")
+    message <- paste("The guess you've made '", guess, "' was not a number!\n")
     stop(message)
 }
 
