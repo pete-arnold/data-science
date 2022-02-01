@@ -8,6 +8,6 @@ Also included are previous sample R files and some of the module lecture notes
 about software practices and functions.
 
 Just a quick edit on the ReadMe by Alex :)
-
+Current R version 4.1.2 -- "Bird Hippie" (cool name)
 
 ---
