@@ -27,4 +27,4 @@ df <- cbind(Date=seq(from = as.Date("1974-01-01"), to = as.Date("1979-12-31"), b
 
 # Consider proportions?
 plot(df)
-boxplot()
+# boxplot()

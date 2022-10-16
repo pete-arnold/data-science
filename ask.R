@@ -26,8 +26,7 @@ guess <- (-1)
 
 cat("Guess a number between 0 and 100.\n")
 
-while(guess != number)
-{
+while(guess != number){
     guess <- get_number()
     if (guess == number) {
         cat("Da iawn!,", number, "is the number.\n", sep=" ")

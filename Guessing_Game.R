@@ -48,7 +48,7 @@ for (i in 1:n_guesses){
         break
     }
     is_guessed <- FALSE
-    if (as.integer(guess)) is_guessed <- TRUE
+    if (as.integer(guess) == n) is_guessed <- TRUE
     if (is_guessed) {
         cat("The guess '", guess, "' was correct!\n")
         break
@@ -70,11 +70,11 @@ for (i in 1:n_guesses){
         break
     }
     is_guessed <- FALSE
-    if (as.integer(guess)) is_guessed <- TRUE
+    if (as.integer(guess) == n) is_guessed <- TRUE
     if (is_guessed) {
         cat("The guess '", guess, "' was correct!\n")
         break
-    } else if (guess > n) {
+    } else if (as.integer(guess) > n) {
         cat("The guess '", guess, "' was too high!\n")
     } else {
         cat("The guess '", guess, "' was too low!\n")
@@ -96,11 +96,11 @@ repeat{
         break
     }
     is_guessed <- FALSE
-    if (as.integer(guess)) is_guessed <- TRUE
+    if (as.integer(guess) == n) is_guessed <- TRUE
     if (is_guessed) {
         cat("The guess '", guess, "' was correct!\n")
         break
-    } else if (guess > n) {
+    } else if (as.integer(guess) > n) {
         cat("The guess '", guess, "' was too high!\n")
     } else {
         cat("The guess '", guess, "' was too low!\n")
@@ -120,10 +120,10 @@ while(is_number & !is_guessed){
         cat("The guess '", guess, "' was not a number!\n")
     } else {
         is_guessed <- FALSE
-        if (as.integer(guess)) is_guessed <- TRUE
+    if (as.integer(guess) == n) is_guessed <- TRUE
         if (is_guessed) {
             cat("The guess '", guess, "' was correct!\n")
-        } else if (guess > n) {
+        } else if (as.integer(guess) > n) {
             cat("The guess '", guess, "' was too high!\n")
         } else {
             cat("The guess '", guess, "' was too low!\n")
