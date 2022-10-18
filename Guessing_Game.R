@@ -7,7 +7,7 @@
 
 # 1. Generate a random number between 1 and 100 (inclusive).
 n <- round(runif(1) * 200, 0)
-
+print ('Hello world')
 # How shall we check that this is correct?
 
 # 2. Get the user to make a guess.
