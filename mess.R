@@ -2,4 +2,8 @@
 # Pete
 # 17.10
 # File to demo a new file
-rubbish <- runif(1)
+
+smile<-function(name){
+  cat(name, 'is smiliing')
+}
+
