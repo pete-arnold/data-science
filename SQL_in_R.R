@@ -11,7 +11,7 @@ library(GetoptLong)     # To substitute variables into strings.
 
 drv <- dbDriver('PostgreSQL')
 con <- dbConnect(drv, dbname='gp_practice_data', host='localhost',
-                 port=5433, user='postgres',
+                 port=5432, user='postgres',
                  password=.rs.askForPassword('Password:'))
 tables <- dbListTables(con)
 print(tables)
@@ -29,7 +29,7 @@ df <- dbGetQuery(con, "
     inner join
         address as ad
     on  gp.practiceid = ad.practiceid
-    where 
+    where
         ad.postcode like 'CF%'
     group by
         gp.practiceid
@@ -44,7 +44,7 @@ df <- dbGetQuery(con, '
     inner join
         address as ad
     on  gp.practiceid = ad.practiceid
-    where 
+    where
         ad.postcode like \'CF%\'
     group by
         gp.practiceid
@@ -61,7 +61,7 @@ df <- dbGetQuery(con,
         inner join
             address as ad
         on  gp.practiceid = ad.practiceid
-        where 
+        where
             ad.postcode like '", postcode, "%'
         group by
             gp.practiceid
@@ -76,7 +76,7 @@ df <- dbGetQuery(con, qq("
     inner join
         address as ad
     on  gp.practiceid = ad.practiceid
-    where 
+    where
         ad.postcode like '@{postcode}%'
     group by
         gp.practiceid
@@ -95,7 +95,7 @@ get_practice_date_range <- function(db_con, postcode){
         inner join
             address as ad
         on  gp.practiceid = ad.practiceid
-        where 
+        where
             ad.postcode like '", postcode, "%'
         group by
             gp.practiceid
@@ -138,7 +138,7 @@ get_practice_date_range <- function(db_con, postcode){
         inner join
             address as ad
         on  gp.practiceid = ad.practiceid
-        where 
+        where
             ad.postcode like '@{postcode}%'
         group by
             gp.practiceid
