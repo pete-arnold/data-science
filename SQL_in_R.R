@@ -15,9 +15,6 @@ con <- dbConnect(drv, dbname='gp_practice_data', host='localhost',
                  password=.rs.askForPassword('Password:'))
 tables <- dbListTables(con)
 print(tables)
-con <- dbConnect(drv, dbname='gp_practice_data', host='localhost',
-port=5433, user='postgres',
-password=.rs.askForPassword('Password:'))
 
 # 2. Getting it working with queries (after exercise 2).
 # ------------------------------------------------------------------------------
